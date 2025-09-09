@@ -6,7 +6,7 @@ export const useScoreboard = () => {
 
   const startNewMatch = (homeTeam: string, awayTeam: string) => {
     const newMatch: Match = {
-      id: Math.random().toString(36).substr(2, 9),
+      id: Math.random().toString(36).substring(2, 9),
       homeTeam,
       awayTeam,
       homeScore: 0,
