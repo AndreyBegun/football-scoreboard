@@ -1,6 +1,6 @@
 
 import { renderHook, act } from '@testing-library/react';
-import { useScoreboard } from './useScoreboard';
+import { useScoreboard } from '../hooks/useScoreBoard';
 
 describe('useScoreboard', () => {
   it('should start a new match with a score of 0-0', () => {
