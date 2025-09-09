@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import type { Match } from "../types/Match";
 
 export const useScoreboard = () => {
@@ -34,7 +34,18 @@ export const useScoreboard = () => {
     );
   };
 
-  const summary = matches;
+  const summary = useMemo(() => {
+    const sortedMatches = [...matches].sort((a, b) => {
+      const totalScoreA = a.homeScore + a.awayScore;
+      const totalScoreB = b.homeScore + b.awayScore;
+
+      if (totalScoreA !== totalScoreB) {
+        return totalScoreB - totalScoreA;
+      }
+      return b.startTime - a.startTime;
+    });
+    return sortedMatches;
+  }, [matches]);
 
   return { summary, startNewMatch, updateScore, finishMatch };
 };
