@@ -1,5 +1,5 @@
 import { useState, useMemo } from "react";
-import type { Match } from "../types/Match";
+import type { Match } from "../types/MatchTypes";
 
 export const useScoreboard = () => {
   const [matches, setMatches] = useState<Match[]>([]);
