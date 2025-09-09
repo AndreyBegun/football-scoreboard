@@ -28,7 +28,13 @@ export const useScoreboard = () => {
     );
   };
 
+  const finishMatch = (matchId: string) => {
+    setMatches((prevMatches) =>
+      prevMatches.filter((match) => match.id !== matchId)
+    );
+  };
+
   const summary = matches;
 
-  return { summary, startNewMatch, updateScore };
+  return { summary, startNewMatch, updateScore, finishMatch };
 };
