@@ -1,5 +1,5 @@
 import type { MatchListProps } from "../types/MatchTypes";
-import { MatchInProgress } from "./MatcInProgress";
+import { MatchInProgress } from "./MatchInProgress";
 
 export const MatchList = ({
   matches,
@@ -15,6 +15,7 @@ export const MatchList = ({
         <ul className="match-list">
           {matches.map((match) => (
             <MatchInProgress
+              key={match.id}
               match={match}
               onFinishMatch={onFinishMatch}
               onUpdateScore={onUpdateScore}

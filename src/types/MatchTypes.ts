@@ -20,9 +20,9 @@ export interface MatchListProps {
   ) => void;
   onFinishMatch: (matchId: string) => void;
 }
+
 export interface MatchInProgressProps {
   match: Match;
-
   onUpdateScore: (
     matchId: string,
     homeScore: number,

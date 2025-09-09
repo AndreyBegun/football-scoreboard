@@ -6,7 +6,7 @@ export const MatchInProgress = ({
   onUpdateScore,
 }: MatchInProgressProps) => {
   return (
-    <li key={match.id} className="match-item">
+    <li className="match-item">
       <div className="match-info">
         <span className="team-name">{match.homeTeam}</span>
         <input
